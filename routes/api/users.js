@@ -5,7 +5,7 @@ const { check, validationResult } = require('express-validator/check');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs'); // for encryption of password
 const jwt = require('jsonwebtoken');
-const User = require('../../models/Users'); // Get User Model
+const User = require('../../models/User'); // Get User Model
 const config = require('config');
 
 //@route    POST     api/users/
@@ -69,7 +69,7 @@ router.post('/', [
                 payload,
                 secret, { expiresIn: 360000 },
                 (err, token) => {
-                    if (error) throw error;
+                    if (err) throw err;
                     console.log(token);
                     res.json({ token }); // get token, send to client
                 }
