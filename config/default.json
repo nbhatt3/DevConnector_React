@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://nitin:nitinlog@devconnector-2xrtf.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "nitinSecretTokenForJwt"
+}
