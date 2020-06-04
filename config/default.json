@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://nitin:nitinlog@devconnector-2xrtf.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "nitinSecretTokenForJwt"
+    "jwtSecret": "nitinSecretTokenForJwt",
+    "githubClientId": "382738c4ebfe7d28752d",
+    "githubSecret": "bd88b97bbdfb4fd3777e80b3b3cde7a2185220cd"
 }

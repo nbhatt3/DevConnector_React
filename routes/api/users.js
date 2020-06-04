@@ -67,7 +67,7 @@ router.post('/', [
             console.log(secret + " is secret");
             jwt.sign(
                 payload,
-                secret, { expiresIn: 360000 },
+                secret, { expiresIn: '12 days' },
                 (err, token) => {
                     if (err) throw err;
                     console.log(token);

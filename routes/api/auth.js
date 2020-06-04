@@ -3,6 +3,7 @@ const router = express.Router();
 
 const auth = require('../../middleware/auth');
 const jwt = require('jsonwebtoken');
+
 const User = require('../../models/User'); // Get User Model
 const config = require('config');
 const bcrypt = require('bcryptjs');
@@ -35,7 +36,10 @@ router.post('/', [
     ],
     async(req, res) => {
         console.log(req.body);
+        console.log("In POST AUTH");
         const errors = validationResult(req);
+        console.log(errors);
+
         if (!errors.isEmpty()) { // return error array and set BAD status
             return res.status(400).json({ errors: errors.array() })
         }
@@ -71,9 +75,10 @@ router.post('/', [
 
             const secret = config.get('jwtSecret');
             console.log(secret + " is secret");
+
             jwt.sign(
                 payload,
-                secret, { expiresIn: 360000 },
+                secret, { expiresIn: '12 days' },
                 (error, token) => {
                     if (error) throw error;
                     // console.log(token);

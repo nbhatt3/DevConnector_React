@@ -1,0 +1,40 @@
+
+http://localhost:5000/api/auth/
+
+
+GET AUTH
+http://localhost:5000/api/auth/
+x-auth-token - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVkN2FmNTJlMzNmOTkwZWYwM2I0OGEwIn0sImlhdCI6MTU5MTE5MzQyNiwiZXhwIjoxNTkyMjMwMjI2fQ.lnGdvAPye1zQEwv4slOEKyFoTEjJVyd7zRcso1cCihY
+
+
+POST - Register user
+http://localhost:5000/api/auth/
+
+{
+	"name": "Nitin6",
+	"email": "nitin6@gmail.com",
+	"password": "password1"
+}
+
+
+POST - Profile Create and Update
+
+http://localhost:5000/api/profile
+For user 
+nitin3@gmail.com
+password1
+Provide in Header token (x-auth-token) as - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVkNzhmMGM5YTM2ZDMzMmQ4N2M5NzYyIn0sImlhdCI6MTU5MTE4NTE2NSwiZXhwIjoxNTkxNTQ1MTY1fQ.z8uhib9gjVssKuFYg7FWdN_zZM1by3iDNOG3tOBD7p4
+
+
+{
+	"skills": "HTML, Javascript, Smalltalk, React, MongoDB",
+	"status": "Senior Developer",
+	"location" : "Bengaluru",
+	"website": "https://mywebsite.com",
+	"bio": "I am a Senior Full-Stack Developer",
+	"company": "ABC1 Company",
+	"githubusername": "nbhatt3",
+	"facbook": "https://facebook.com",
+	"twitter": "https::/twitter.com",
+	"youtube": "https://youtube.com"
+}
