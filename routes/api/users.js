@@ -22,7 +22,7 @@ router.post('/', [
     ],
 
     async(req, res) => {
-        console.log(req.body);
+        //  console.log(req.body);
         const errors = validationResult(req);
         if (!errors.isEmpty()) { // return error array and set BAD status
             return res.status(400).json({ errors: errors.array() })
@@ -36,6 +36,7 @@ router.post('/', [
             if (user) {
                 return res.status(400).json({ errors: [{ msg: 'User Already exists' }] });
             }
+
             // Get users gravatar using their email ID
             // pass email to search and three params string length (s), r for rating (no objectionable pic), d for getting default pic
             const avatar = gravatar.url(email, {
@@ -64,7 +65,7 @@ router.post('/', [
             };
 
             const secret = config.get('jwtSecret');
-            console.log(secret + " is secret");
+            //    console.log(secret + " is secret");
             jwt.sign(
                 payload,
                 secret, { expiresIn: '12 days' },
@@ -74,8 +75,6 @@ router.post('/', [
                     res.json({ token }); // get token, send to client
                 }
             );
-
-            //  res.send('User Registered');
 
         } catch (err) {
             console.error(err.message);
