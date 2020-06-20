@@ -9,6 +9,11 @@ import Register from '../src/components/auth/Register';
 import Login from '../src/components/auth/Login';
 import Alert from '../src/components/layout/Alert'
 
+import Dashboard from './components/dashboard/Dashboard'
+
+// Use private route for Dashboard
+import PrivateRoute from './components/routing/PrivateRoute'
+
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
@@ -16,7 +21,10 @@ import setAuthToken from './utils/setAuthToken';
 import { Provider } from 'react-redux';
 import store from './store';
 
-// call token check each time using useEffect
+// Profile pages
+import CreateProfile from '../src/components/profile-forms/CreateProfile'
+import EditProfile from '../src/components/profile-forms/EditProfile'
+
 if (localStorage.token) {
     setAuthToken(localStorage.token);
 }
@@ -51,6 +59,15 @@ const App = () => {
         /> <
         Route exact path = "/login"
         component = { Login }
+        />  <
+        PrivateRoute exact path = "/dashboard"
+        component = { Dashboard }
+        />  <
+        PrivateRoute exact path = "/create-profile"
+        component = { CreateProfile }
+        /> <
+        PrivateRoute exact path = "/edit-profile"
+        component = { EditProfile }
         /> < /
         Switch > <
         /section> < /

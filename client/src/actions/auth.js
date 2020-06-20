@@ -8,7 +8,8 @@ import {
     AUTH_ERROR,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    CLEAR_PROFILE
 } from './types';
 
 import setAuthToken from '../utils/setAuthToken';
@@ -16,7 +17,7 @@ import setAuthToken from '../utils/setAuthToken';
 //Load User
 export const loadUser = () => async dispatch => {
 
-    // check token present or not, use a utility file 
+    // check token present or not
     if (localStorage.token) {
         setAuthToken(localStorage.token);
     }
@@ -105,4 +106,5 @@ export const login = (email, password) => async dispatch => {
 // Logout and clear profile
 export const logout = () => dispatch => {
     dispatch({ type: LOGOUT });
+    dispatch({ type: CLEAR_PROFILE });
 };

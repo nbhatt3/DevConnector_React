@@ -28,7 +28,7 @@ router.get('/me', auth, async(req, res) => {
 
         // when profile is obtained successfully, return it
         res.json(profile);
-
+        console.log(res.json(profile));
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error - Profile');
