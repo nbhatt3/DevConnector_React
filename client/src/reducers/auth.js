@@ -9,6 +9,7 @@ import {
     ACCOUNT_DELETED
 } from '../actions/types';
 
+
 // store token in localStorage, set initial State
 const initalState = {
     token: localStorage.getItem('Item'),

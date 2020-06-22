@@ -145,7 +145,6 @@ export const deleteExperience = id => async dispatch => {
     }
 }
 
-
 // Delete an Education
 export const deleteEducation = id => async dispatch => {
     try {
