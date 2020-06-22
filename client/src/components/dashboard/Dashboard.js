@@ -13,6 +13,7 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: 
         getCurrentProfile();
     }, []);
 
+
     return loading && profile == null ? < Spinner / > : < Fragment >
         <
         h1 className = "large text=primary" > Dashboard < /h1> <
