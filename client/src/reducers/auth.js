@@ -5,7 +5,8 @@ import {
     USER_LOADED,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    ACCOUNT_DELETED
 } from '../actions/types';
 
 // store token in localStorage, set initial State
@@ -40,6 +41,7 @@ export default function(state = initalState, action) {
         case LOGIN_FAIL:
         case AUTH_ERROR:
         case LOGOUT:
+        case ACCOUNT_DELETED:
             localStorage.removeItem('token');
             return {
                 ...state,

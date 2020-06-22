@@ -59,7 +59,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
         });
     }, [loading]); // run on loading only
 
-    const onChange = e => setFormData({...formData, [e.target.name]: [e.target.value] });
+    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value });
     const onSubmit = e => {
         e.preventDefault();
         createProfile(formData, history, true);
